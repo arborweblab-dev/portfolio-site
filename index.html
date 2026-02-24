@@ -45,15 +45,39 @@
             />
         );
 
-        const ProjectSlideshow = ({ desktopImages, mobileImages, color }) => {
+        const ProjectSlideshow = ({ desktopImages, mobileImages, tabletImages, color }) => {
             const [index, setIndex] = useState(0);
+            const activeImages = tabletImages || desktopImages;
 
             useEffect(() => {
                 const timer = setInterval(() => {
-                    setIndex((prev) => (prev + 1) % desktopImages.length);
+                    setIndex((prev) => (prev + 1) % activeImages.length);
                 }, 4000);
                 return () => clearInterval(timer);
-            }, [desktopImages.length]);
+            }, [activeImages.length]);
+
+            if (tabletImages) {
+                return (
+                    <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center group">
+                        {/* Tablet Frame */}
+                        <div className="relative w-[90%] md:w-[70%] lg:w-[80%] aspect-[4/3] bg-[#0a0f1a] rounded-[2.5rem] p-2 lg:p-4 shadow-2xl border-[8px] border-[#242938] overflow-hidden transition-all duration-700 group-hover:scale-[1.02]">
+                            {/* Inner Screen */}
+                            <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-slate-900">
+                                {tabletImages.map((img, i) => (
+                                    <img
+                                        key={i}
+                                        src={img}
+                                        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${i === index ? 'opacity-100' : 'opacity-0'}`}
+                                    />
+                                ))}
+                            </div>
+                            <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-10 pointer-events-none`}></div>
+                        </div>
+                        {/* Tablet Glow */}
+                        <div className={`absolute -inset-10 blur-[100px] opacity-10 bg-gradient-to-r ${color} rounded-full -z-10`}></div>
+                    </div>
+                );
+            }
 
             return (
                 <div className="relative w-full h-[400px] lg:h-[500px] group">
@@ -67,7 +91,7 @@
                                     <div className="w-2 h-2 rounded-full bg-emerald-500/30"></div>
                                 </div>
                                 <div className="mx-auto bg-slate-900/50 px-3 py-1 rounded-md text-[9px] text-slate-500 font-mono tracking-tighter uppercase">
-                                    HTTPS://ARBORWEBLAB.COM/APPS-SHOWCASE
+                                    HTTPS://ARBORWEBLAB.COM/PROJECT-VIEW
                                 </div>
                             </div>
                             <div className="aspect-video relative overflow-hidden bg-slate-800">
@@ -111,7 +135,7 @@
                 {
                     title: "Cruisy Travel",
                     category: "Travel Affiliate Ecosystem",
-                    description: "A tropical, high-conversion affiliate platform featuring a suite of custom-built travel applications. We focus on making technology accessible and useful, engineering tools that help travel brands turn standard traffic into loyal, high-conversion audiences.",
+                    description: "A tropical, high-conversion affiliate platform featuring a suite of custom-built applications. We focus on making technology accessible and useful, engineering tools that help travel brands turn standard traffic into loyal, high-conversion audiences.",
                     desktopImages: [
                         "https://arborweblab.com/wp-content/uploads/2026/02/Cruisy-Travel-Website-Screenshot-Home-.png",
                         "https://arborweblab.com/wp-content/uploads/2026/02/Cruisy-Travel-Key-West-Page.png"
@@ -126,8 +150,8 @@
                 },
                 {
                     title: "Travel Apps & Tools",
-                    category: "Custom Software Solutions",
-                    description: "High-utility tools built with React, Tailwind, and Node.js. We develop specialized applications like the Trip Planner, Cruise Matchmaker, Cruise Explorer, Sandbar Finder, Sunset Chaser, and Fishing Charter Finder—all designed to empower businesses and users alike. Many more innovations are currently in development.",
+                    category: "React Software Solutions",
+                    description: "High-utility tools built with React and modern tech stacks. We develop specialized applications like the Trip Planner, Cruise Matchmaker, Cruise Explorer, Sandbar Finder, Sunset Chaser, and Fishing Charter Finder—all designed to empower businesses and users alike.",
                     desktopImages: [
                         "https://arborweblab.com/wp-content/uploads/2026/02/Sandbar-Finder-Home-Screen-Screenshot.png",
                         "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.17.41-PM.png",
@@ -148,6 +172,22 @@
                     tags: ["React", "API Integration", "AI Flows", "Custom UI"],
                     url: "https://cruisytravel.com",
                     color: "from-emerald-400 to-teal-600"
+                },
+                {
+                    title: "My Journey",
+                    category: "Healthcare Companion App",
+                    description: "A specialized healthcare companion designed to simplify the breastfeeding journey. Built with React and optimized for user engagement, My Journey provides mothers with intuitive tools to track progress and access critical resources effortlessly. We can build specialized healthcare tools for any medical niche.",
+                    tabletImages: [
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.53.15-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.53.25-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.49.02-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.49.34-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.50.17-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.50.48-PM.png"
+                    ],
+                    tags: ["React", "Data Tracking", "UX Design", "Healthcare"],
+                    url: "https://arborweblab.com",
+                    color: "from-purple-500 to-pink-500"
                 }
             ];
 
@@ -199,7 +239,7 @@
                             {featuredProjects.map((project, idx) => (
                                 <div key={idx} className={`flex flex-col lg:flex-row gap-16 lg:gap-24 items-center group ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                                     <div className="w-full lg:w-3/5">
-                                        <ProjectSlideshow desktopImages={project.desktopImages} mobileImages={project.mobileImages} color={project.color} />
+                                        <ProjectSlideshow desktopImages={project.desktopImages} mobileImages={project.mobileImages} tabletImages={project.tabletImages} color={project.color} />
                                     </div>
                                     <div className="w-full lg:w-2/5 space-y-8">
                                         <div className="space-y-4">
