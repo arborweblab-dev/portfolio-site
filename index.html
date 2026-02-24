@@ -37,6 +37,14 @@
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
         };
 
+        const LogoImage = ({ className = "w-10 h-10" }) => (
+            <img 
+                src="https://arborweblab.com/wp-content/uploads/2025/08/cropped-Arbor-Web-Lab-icon.png" 
+                alt="Arbor Web Lab" 
+                className={className} 
+            />
+        );
+
         const ProjectSlideshow = ({ desktopImages, mobileImages, color }) => {
             const [index, setIndex] = useState(0);
 
@@ -49,6 +57,7 @@
 
             return (
                 <div className="relative w-full h-[400px] lg:h-[500px] group">
+                    {/* Desktop Browser Mockup */}
                     <div className="absolute top-0 left-0 w-[85%] lg:w-[80%] z-10 transition-all duration-700 transform group-hover:-translate-y-2">
                         <div className="bg-[#1a1f2e] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                             <div className="bg-[#242938] px-4 py-2 border-b border-white/5 flex items-center gap-2">
@@ -58,7 +67,7 @@
                                     <div className="w-2 h-2 rounded-full bg-emerald-500/30"></div>
                                 </div>
                                 <div className="mx-auto bg-slate-900/50 px-3 py-1 rounded-md text-[9px] text-slate-500 font-mono tracking-tighter uppercase">
-                                    HTTPS://ARBORWEBLAB.COM/PREVIEW
+                                    HTTPS://ARBORWEBLAB.COM/APPS-SHOWCASE
                                 </div>
                             </div>
                             <div className="aspect-video relative overflow-hidden bg-slate-800">
@@ -74,6 +83,7 @@
                         </div>
                     </div>
 
+                    {/* Mobile Phone Mockup */}
                     <div className="absolute bottom-0 right-0 w-[32%] lg:w-[28%] z-20 transition-all duration-700 transform group-hover:translate-x-2 group-hover:translate-y-1">
                         <div className="relative bg-[#0a0f1a] rounded-[2.5rem] p-1.5 shadow-2xl border-[4px] border-[#242938]">
                             <div className="absolute top-3 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#0a0f1a] rounded-full z-30"></div>
@@ -101,7 +111,7 @@
                 {
                     title: "Cruisy Travel",
                     category: "Travel Affiliate Ecosystem",
-                    description: "A tropical, high-conversion affiliate platform featuring a suite of custom-built travel applications including the Cruise Explorer, Cruise Matchmaker, and Trip Planner. We engineer these high-utility tools to help travel brands turn standard traffic into a loyal, high-conversion audience.",
+                    description: "A tropical, high-conversion affiliate platform featuring a suite of custom-built travel applications. We focus on making technology accessible and useful, engineering tools that help travel brands turn standard traffic into loyal, high-conversion audiences.",
                     desktopImages: [
                         "https://arborweblab.com/wp-content/uploads/2026/02/Cruisy-Travel-Website-Screenshot-Home-.png",
                         "https://arborweblab.com/wp-content/uploads/2026/02/Cruisy-Travel-Key-West-Page.png"
@@ -110,23 +120,32 @@
                         "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-113836-scaled-e1771952433142.png",
                         "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-120204-scaled.png"
                     ],
-                    tags: ["Cruise Explorer", "Trip Planner", "Cruise Matchmaker"],
+                    tags: ["Affiliate Engine", "SEO Optimized", "Mobile First"],
                     url: "https://cruisytravel.com",
                     color: "from-cyan-500 to-emerald-500"
                 },
                 {
-                    title: "Sandbar Finder",
-                    category: "Travel Application",
-                    description: "A specialized exploration app developed for the Cruisy Travel network. This high-utility tool demonstrates our ability to create localized niche apps—like the Sandbar Finder—which dominate micro-markets by providing interactive value to users. We can deploy this exact architecture for any travel business.",
+                    title: "Travel Apps & Tools",
+                    category: "Custom Software Solutions",
+                    description: "High-utility tools built with React, Tailwind, and Node.js. We develop specialized applications like the Trip Planner, Cruise Matchmaker, Cruise Explorer, Sandbar Finder, Sunset Chaser, and Fishing Charter Finder—all designed to empower businesses and users alike. Many more innovations are currently in development.",
                     desktopImages: [
                         "https://arborweblab.com/wp-content/uploads/2026/02/Sandbar-Finder-Home-Screen-Screenshot.png",
-                        "https://arborweblab.com/wp-content/uploads/2026/02/Sandbar-Finder-Amazon-Travel-Essentials-Screenshot.png"
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.17.41-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.18.36-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.18.59-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.19.14-PM.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot-2026-02-24-2.19.41-PM.png"
                     ],
                     mobileImages: [
                         "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-114847.png",
-                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-113917-scaled-e1771952813333.png"
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-113917-scaled-e1771952813333.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-115119.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-143205-scaled.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-143243.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-114847-2.png",
+                        "https://arborweblab.com/wp-content/uploads/2026/02/Screenshot_20260224-143340.png"
                     ],
-                    tags: ["Niche Exploration", "Map Integration", "Custom Build"],
+                    tags: ["React", "API Integration", "AI Flows", "Custom UI"],
                     url: "https://cruisytravel.com",
                     color: "from-emerald-400 to-teal-600"
                 }
@@ -144,9 +163,7 @@
                     <header className="relative z-50 py-8 px-6 lg:px-12 border-b border-white/5 backdrop-blur-sm">
                         <div className="max-w-7xl mx-auto flex justify-between items-center">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                                    <Icon name="layers" className="text-white" />
-                                </div>
+                                <LogoImage className="w-10 h-10" />
                                 <div className="leading-none">
                                     <span className="block text-lg font-black tracking-tighter text-white uppercase">Arbor Web Lab</span>
                                     <span className="text-[10px] font-bold text-emerald-500 tracking-[0.2em] uppercase">Specialized Solutions</span>
@@ -158,24 +175,25 @@
                         </div>
                     </header>
 
-                    <section className="relative z-10 pt-20 pb-32 px-6">
+                    <section className="relative z-10 pt-24 pb-32 px-6">
                         <div className="max-w-7xl mx-auto">
                             <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
-                                    <Icon name="sparkles" size={12} /> Custom Travel App Deployments
+                                    <Icon name="zap" size={12} /> Digital Experience Architecture
                                 </div>
                                 <h1 className="text-6xl lg:text-9xl font-black tracking-tighter text-white mb-8 leading-[0.85] uppercase">
-                                    Digital <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-600">Experience</span> <br />
-                                    Archive.
+                                    Building <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-600">Digital Ideas</span> <br />
+                                    Into Reality.
                                 </h1>
-                                <p className="max-w-2xl text-xl text-slate-400 leading-relaxed font-medium">
-                                    Specialized high-performance travel apps and custom niche portals. We build the tools that turn travelers into customers.
+                                <p className="max-w-2xl text-xl text-slate-400 leading-relaxed font-medium uppercase tracking-tight">
+                                    Apps. Tools. Websites. Solutions.
                                 </p>
                             </div>
                         </div>
                     </section>
 
+                    {/* Featured Grid */}
                     <section className="relative z-10 py-20 px-6">
                         <div className="max-w-7xl mx-auto space-y-48">
                             {featuredProjects.map((project, idx) => (
@@ -188,15 +206,15 @@
                                             <span className={`text-xs font-black uppercase tracking-[0.3em] bg-clip-text text-transparent bg-gradient-to-r ${project.color}`}>{project.category}</span>
                                             <h3 className="text-4xl lg:text-6xl font-black text-white leading-tight uppercase">{project.title}</h3>
                                         </div>
-                                        <p className="text-lg text-slate-400 leading-relaxed">{project.description}</p>
+                                        <p className="text-lg text-slate-400 leading-relaxed font-medium">{project.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {project.tags.map(tag => (
                                                 <span key={tag} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[10px] font-bold text-slate-400 uppercase tracking-widest">{tag}</span>
                                             ))}
                                         </div>
                                         <div className="pt-4">
-                                            <a href={project.url} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-950 font-black rounded-xl hover:bg-emerald-500 hover:text-white transition-all transform hover:-translate-y-1 w-full sm:w-auto justify-center">
-                                                VIEW PROJECT <Icon name="external-link" size={18} />
+                                            <a href={project.url} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-950 font-black rounded-xl hover:bg-emerald-500 hover:text-white transition-all transform hover:-translate-y-1 w-full sm:w-auto justify-center uppercase tracking-tighter">
+                                                VIEW LIVE PREVIEW <Icon name="external-link" size={18} />
                                             </a>
                                         </div>
                                     </div>
@@ -205,23 +223,59 @@
                         </div>
                     </section>
 
-                    <section className="py-32 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-emerald-500/5 -skew-y-3"></div>
+                    {/* Brand Voice / Little bit of everything */}
+                    <section className="relative z-10 py-32 px-6">
+                        <div className="max-w-5xl mx-auto bg-white/5 border border-white/10 rounded-[3rem] p-10 lg:p-20 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full"></div>
+                            <div className="relative z-10 space-y-8">
+                                <h2 className="text-4xl lg:text-6xl font-black text-white tracking-tighter uppercase">A Little Bit of Everything</h2>
+                                <p className="text-xl lg:text-2xl text-slate-400 leading-relaxed font-medium">
+                                    Arbor Web Lab creates apps, tools, websites, products, and solutions designed to empower people and businesses. If it helps you work smarter, connect better, or grow faster — we build it.
+                                </p>
+                                <div className="grid md:grid-cols-3 gap-8 pt-8">
+                                    <div className="space-y-4">
+                                        <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
+                                            <Icon name="monitor" size={24} />
+                                        </div>
+                                        <h4 className="font-bold text-white uppercase tracking-widest text-sm">Web Design</h4>
+                                        <p className="text-xs text-slate-500 leading-relaxed">Modern, mobile-first websites built for performance, SEO, and conversions.</p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-500">
+                                            <Icon name="settings" size={24} />
+                                        </div>
+                                        <h4 className="font-bold text-white uppercase tracking-widest text-sm">Tools and Apps</h4>
+                                        <p className="text-xs text-slate-500 leading-relaxed">From scheduling flows to AI integrations, we create tools that help people get more done.</p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500">
+                                            <Icon name="bar-chart-3" size={24} />
+                                        </div>
+                                        <h4 className="font-bold text-white uppercase tracking-widest text-sm">Digital Marketing</h4>
+                                        <p className="text-xs text-slate-500 leading-relaxed">SEO, branding, and user-focused strategies to help your business grow online.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Stats / Deployment Log */}
+                    <section className="py-32 relative overflow-hidden bg-emerald-500/5">
                         <div className="max-w-7xl mx-auto px-6 relative z-10">
                             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                                 <div className="space-y-4 text-center md:text-left">
-                                    <h2 className="text-4xl lg:text-6xl font-black text-white tracking-tighter uppercase">Deployment Log</h2>
-                                    <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">A brief history of our craftsmanship</p>
+                                    <h2 className="text-4xl lg:text-6xl font-black text-white tracking-tighter uppercase">Ideas Turned Into Digital Projects</h2>
+                                    <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">Focus On Smart, User-Friendly Design</p>
                                 </div>
                                 <div className="bg-emerald-500/10 border border-emerald-500/20 p-6 rounded-2xl backdrop-blur-md w-full md:w-auto text-center">
                                     <div className="text-4xl font-black text-emerald-500">2500+</div>
-                                    <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Projects Shipped</div>
+                                    <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Active Deployments</div>
                                 </div>
                             </div>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 {pastProjects.map((name, i) => (
                                     <div key={i} className="group p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all duration-500">
-                                        <span className="text-slate-500 group-hover:text-emerald-400 font-mono text-[9px] block mb-2 uppercase tracking-tighter">ID: AWL-0{i+1}</span>
+                                        <span className="text-slate-500 group-hover:text-emerald-400 font-mono text-[9px] block mb-2 uppercase tracking-tighter">PROJECT ARCHIVE: AWL-0{i+1}</span>
                                         <span className="text-slate-300 group-hover:text-white font-bold tracking-tight text-xs uppercase">{name}</span>
                                     </div>
                                 ))}
@@ -229,27 +283,48 @@
                         </div>
                     </section>
 
+                    {/* Testimonials */}
+                    <section className="py-32 px-6">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="grid md:grid-cols-3 gap-8">
+                                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 space-y-6">
+                                    <div className="flex gap-1 text-emerald-500"><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /></div>
+                                    <p className="text-slate-300 italic leading-relaxed">“Josh with Arbor Web Lab built our website from the ground up. Fast, responsive, and beautiful. We’ve doubled our online leads!”</p>
+                                </div>
+                                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 space-y-6">
+                                    <div className="flex gap-1 text-emerald-500"><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /></div>
+                                    <p className="text-slate-300 italic leading-relaxed">“The custom tool Josh created for us saves hours every week. Simple, intuitive, and exactly what we needed.”</p>
+                                </div>
+                                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 space-y-6">
+                                    <div className="flex gap-1 text-emerald-500"><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /><Icon name="star" size={14} /></div>
+                                    <p className="text-slate-300 italic leading-relaxed">“From branding to SEO, they handled everything our business needed and more! We went from invisible to ranking on page one.”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Contact */}
                     <section id="contact" className="py-40 px-6 relative">
                         <div className="max-w-4xl mx-auto text-center space-y-12">
                             <div className="relative inline-block">
                                 <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none uppercase">
-                                    Start Your <br />
-                                    <span className="text-emerald-500 font-black">Own Build</span>
+                                    Let’s Build <br />
+                                    <span className="text-emerald-500 font-black">Something Together</span>
                                 </h2>
                                 <div className="absolute -right-8 -top-8 w-16 h-16 border-t-2 border-r-2 border-emerald-500/50"></div>
                                 <div className="absolute -left-8 -bottom-8 w-16 h-16 border-b-2 border-l-2 border-emerald-500/50"></div>
                             </div>
                             <p className="text-xl text-slate-400 max-w-xl mx-auto font-medium">
-                                Ready for a custom Cruise Explorer, Trip Planner, or Niche Exploration app? We create specialized tools for any travel business looking to offer more value.
+                                Your idea deserves more than a template. Let’s create something custom for you.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                                <a href="mailto:hello@arborweblab.com" className="w-full sm:w-auto px-12 py-6 bg-emerald-600 text-white font-black text-xl rounded-2xl hover:bg-emerald-500 transition-all shadow-2xl shadow-emerald-500/30 uppercase tracking-tighter">
-                                    Get an Estimate
-                                </a>
-                                <div className="text-slate-500 font-mono text-[10px] uppercase tracking-[0.3em] flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    Active for Booking
+                            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+                                <div className="bg-white/10 px-8 py-5 rounded-2xl border border-white/20 flex items-center gap-4">
+                                    <span className="text-slate-400 font-mono text-lg font-bold">12 + 15 =</span>
+                                    <input type="text" className="w-16 bg-white/5 border border-white/20 rounded-lg text-center font-bold text-white focus:outline-none focus:border-emerald-500" placeholder="?" />
                                 </div>
+                                <a href="mailto:hello@arborweblab.com" className="w-full sm:w-auto px-12 py-6 bg-emerald-600 text-white font-black text-xl rounded-2xl hover:bg-emerald-500 transition-all shadow-2xl shadow-emerald-500/30 uppercase tracking-tighter">
+                                    Submit Project
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -257,10 +332,10 @@
                     <footer className="py-12 border-t border-white/5 bg-black/50 backdrop-blur-xl">
                         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
                             <div className="flex items-center gap-4">
-                                <div className="w-8 h-8 border border-white/20 rounded-lg flex items-center justify-center">AWL</div>
-                                <span>© 2026 Arbor Web Lab</span>
+                                <LogoImage className="w-6 h-6 grayscale opacity-50" />
+                                <span>© 2026 Arbor Web Lab | Built for growth</span>
                             </div>
-                            <a href="https://arborweblab.com" className="hover:text-emerald-500 transition-colors underline decoration-slate-800 underline-offset-4 decoration-2">CORE SYSTEMS</a>
+                            <a href="https://arborweblab.com" className="hover:text-emerald-500 transition-colors underline decoration-slate-800 underline-offset-4 decoration-2 uppercase">Core Systems</a>
                         </div>
                     </footer>
                 </div>
